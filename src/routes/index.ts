@@ -22,7 +22,7 @@ export async function appRoutes(app: FastifyInstance) {
                 created_at: today,
                 weekDays: {
                     create: weekDays.map((weekDay) => {
-                        return {
+                        return{
                             week_day: weekDay
                         }
                     })
@@ -53,6 +53,8 @@ export async function appRoutes(app: FastifyInstance) {
                 }
             }
         });
+
+        
 
         const day = await prisma.day.findUnique({
             where: {
